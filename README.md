@@ -6,15 +6,46 @@ An AI-powered social trash talk battle card generator for Daily Fantasy Sports l
 
 ---
 
-## The 30-Second Pitch
+## The Game
 
-Two users paste their DFS lineups. Hit **ROAST**. Claude returns a shareable battle card with personalized trash talk for both sides, a winner prediction, a crowd-pulse score, and a verdict tag (`FIRE` | `ICE` | `CHAOS` | `CLASSIC`). Card lives at a shareable URL. Drop the link in a group chat — friends react with emojis. That's the loop.
+**ROAST MODE is a 1-vs-1 trash-talk battle.**
 
-**Why it wins:**
-- Directly serves BeatM's social-first DFS thesis
-- AI-native — Claude does the funny part
-- Visually shareable — cards are screenshot-worthy
-- Demo-able in 90 seconds — relies on a real laugh on camera
+Two friends each pick a Daily Fantasy Sports lineup. They challenge each other through the app. Claude — playing the role of a hyped-up, brutally honest sports commentator — reads both lineups and writes a personalized **roast card**: 2–3 sentences of savage takedown for each side, a verdict tag (`🔥 FIRE` / `❄️ ICE` / `💥 CHAOS` / `⚖️ CLASSIC`), a crowd-pulse score, and a winner pick.
+
+The card has its own shareable URL. You drop it in the group chat. Your friends pile on with emojis. Tomorrow, the loser builds a revenge lineup. The cycle never ends.
+
+**It turns DFS — usually a solo statistical exercise — into a social spectacle.**
+
+### How a round plays out (under 60 seconds)
+
+| Beat | What happens |
+|---|---|
+| **1. Challenge** | You text a friend: *"Bet your lineup against mine."* Drop the ROAST link in the chat. |
+| **2. Submit** | Both of you paste your 5-player lineups into the page. Any sport, any positions, names only. |
+| **3. Roast** | Hit the giant 🔥 **ROAST** 🔥 button. Claude reads both lineups in ~3 seconds. |
+| **4. React** | The card appears. You read the roast aloud. Someone laughs. Someone slaps the table. *That moment is the product.* |
+| **5. Share** | Copy the URL, drop it back in the chat. Tomorrow you come back for revenge. |
+
+### The stakes
+
+No money. No accounts. No leaderboard (yet). The stakes are **pure bragging rights** — the card is screenshot-worthy and the roast is public. You "lose" when your friend's roast is funnier than yours and they shared it before you did.
+
+### Why it's a game, not just a tool
+
+| Game element | How ROAST MODE has it |
+|---|---|
+| **Players** | Two rivals — friends, coworkers, group-chat enemies |
+| **Skill** | Lineup construction — picking players the AI will roast favorably (or hilariously) |
+| **Surprise** | The AI's tone shifts night to night · you don't know how hard it'll hit |
+| **Resolution** | One verdict tag, one winner, one card |
+| **Replay loop** | Lose tonight? Build a revenge lineup tomorrow. |
+
+### Why it wins the hackathon
+
+- ✅ Directly serves BeatM's social-first DFS thesis — DFS should be loud and communal, not isolated and transactional
+- ✅ AI-native — without Claude, the joke doesn't exist. The AI **is** the product.
+- ✅ Visually shareable — every card is a screenshot-worthy unit of viral content
+- ✅ Demo-able in 90 seconds — the whole pitch is a real laugh on camera
 
 ---
 
