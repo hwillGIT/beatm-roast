@@ -99,17 +99,29 @@ BallDontLie API (NBA)        •  Replit deploy         •  URL-state (no DB)
 
 ---
 
+## Live Links
+
+| What | Where |
+|---|---|
+| 🎮 **Interactive UI Mockup** | https://hwillgit.github.io/beatm-roast/ |
+| 🎬 **Demo Video** | [`demo/BeatM_ROAST_MODE_demo.mp4`](demo/BeatM_ROAST_MODE_demo.mp4) |
+| 📋 **Submission Metadata** | [`meta.json`](meta.json) |
+| 📐 **Full Spec** | [`docs/SPEC.md`](docs/SPEC.md) |
+
 ## Status
 
 - [x] Product concept locked: **ROAST MODE** (Dirty 30 Blackjack → Phase 2)
 - [x] Spec written
 - [x] Team assembled
 - [x] Demo video plan written
-- [ ] Scaffold deployed
+- [x] Interactive UI mockup live on GitHub Pages
+- [x] Demo video shot
+- [x] Submission metadata written
+- [ ] Demo video hosted on Loom / YouTube (file is in repo as backup)
+- [ ] Scaffold deployed (Next.js + Replit)
 - [ ] Claude integration wired
 - [ ] Card UI shipped
-- [ ] Demo video shot + edited
-- [ ] Submission PR open
+- [ ] Submission PR open to `cursor-boston` hub
 
 ---
 

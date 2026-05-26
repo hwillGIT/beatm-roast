@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "beatm-roast-mode",
+  "displayName": "BeatM ROAST MODE",
+  "tagline": "Your lineup. Their lineup. One AI roast. Maximum chaos.",
+  "pitch": "ROAST MODE is a 1-vs-1 trash-talk battle. Two friends each pick a Daily Fantasy lineup. Claude — playing the role of a hyped-up sports commentator — reads both lineups and writes a personalized roast card with two takedowns, a verdict tag (FIRE / ICE / CHAOS / CLASSIC), a crowd-pulse score, and a winner pick. The card has its own shareable URL. Drop it in a group chat — friends pile on with emojis. Tomorrow, the loser builds a revenge lineup. It turns DFS — usually a solo statistical exercise — into a social spectacle.",
+  "event": {
+    "name": "Cursor Boston x Hult Sports Hack",
+    "year": 2026,
+    "date": "2026-05-26",
+    "duration": "2h 30min build sprint",
+    "venue": "Boston, MA",
+    "prizePool": "$1,200 cash + $50 Cursor Credits + Red Bull merch"
+  },
+  "urls": {
+    "repoUrl": "https://github.com/hwillGIT/beatm-roast",
+    "deployedUrl": "https://hwillgit.github.io/beatm-roast/",
+    "videoUrl": "https://github.com/hwillGIT/beatm-roast/raw/main/demo/BeatM_ROAST_MODE_demo.mp4",
+    "videoUrlLoom": "TBD — paste Loom or YouTube unlisted URL here once uploaded",
+    "readmeUrl": "https://github.com/hwillGIT/beatm-roast#readme",
+    "specUrl": "https://github.com/hwillGIT/beatm-roast/blob/main/docs/SPEC.md"
+  },
+  "tech": {
+    "framework": "Next.js 14 App Router (TypeScript)",
+    "styling": "Tailwind CSS + shadcn/ui",
+    "ai": "Anthropic Claude (claude-haiku-4-5) via @anthropic-ai/sdk",
+    "sportsData": "BallDontLie API (NBA, free, no key) + 50-player hardcoded fallback",
+    "sharing": "Dynamic /api/og route (next/og, Satori)",
+    "deploy": "Replit (Secrets for ANTHROPIC_API_KEY)",
+    "state": "URL params + Next.js Route Handlers — no DB",
+    "demoMockup": "Static index.html (Tailwind CDN) served via GitHub Pages"
+  },
+  "team": [
+    {
+      "name": "Mike Williams",
+      "role": "Managing Director & Founder",
+      "company": "BeatM"
+    },
+    {
+      "name": "Zara Okonkwo",
+      "role": "Tech Lead · System Design · Repo Scaffolding",
+      "tagline": "The scaffold IS the design. Get it wrong and we rebuild for an hour."
+    },
+    {
+      "name": "Kai Yamamura",
+      "role": "Frontend Engineer · UI Builder · Cursor Power User",
+      "tagline": "I have a working version. Do you want to argue or do you want to see it?"
+    },
+    {
+      "name": "Dr. Nia Osei",
+      "role": "Claude API Integration · Prompt Architecture · Output Quality",
+      "tagline": "The prompt IS the product. Sloppy prompts ship sloppy products."
+    },
+    {
+      "name": "Marco Salvatore",
+      "role": "Sports APIs · Real-Time Data · Fallback Architecture",
+      "tagline": "APIs lie. Always check the rate limits before you design the feature."
+    },
+    {
+      "name": "Aisha Diallo",
+      "role": "Visual Design · Tailwind Design System · Shareable Card Design",
+      "tagline": "If you wouldn't screenshot it and send it to a group chat, it's not done."
+    },
+    {
+      "name": "Sofia Ferrante",
+      "role": "Demo Video · Shot List · Script · Edit",
+      "tagline": "I don't make product demos. I make people feel something."
+    },
+    {
+      "name": "Quinn Nakashima",
+      "role": "Code Quality · Documentation Standards · Review Workflow",
+      "tagline": "Ship fast AND ship right. Those aren't opposites."
+    }
+  ],
+  "submissionChecklist": {
+    "repoPublic": true,
+    "readmeComplete": true,
+    "specDocComplete": true,
+    "uiMockupLive": true,
+    "videoFileCommitted": true,
+    "videoHostedOnLoomOrYouTube": false,
+    "metaJsonComplete": true,
+    "pagesDeployed": true,
+    "submissionPrOpened": false
+  },
+  "status": "Demo-ready · Submission PR pending Loom URL",
+  "license": "MIT"
+}
