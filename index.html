@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeatM ROAST MODE</title>
+  <meta name="description" content="Your lineup. Their lineup. One AI roast. Maximum chaos." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0A0A0F;
+      --bg-elevated: #14141C;
+      --bg-card: #1A1A24;
+      --orange: #FF6B2B;
+      --orange-dim: #FF6B2B33;
+      --blue: #00D4FF;
+      --blue-dim: #00D4FF33;
+      --text: #F5F5F7;
+      --text-dim: #9999A8;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    .headline-font { font-family: 'Space Grotesk', sans-serif; }
+    .accent-orange { color: var(--orange); }
+    .accent-blue { color: var(--blue); }
+    .bg-card { background: var(--bg-card); }
+    .bg-elevated { background: var(--bg-elevated); }
+    .border-orange { border-color: var(--orange); }
+    .border-blue { border-color: var(--blue); }
+    .text-dim { color: var(--text-dim); }
+    .shadow-orange { box-shadow: 0 0 40px var(--orange-dim); }
+    .shadow-blue { box-shadow: 0 0 40px var(--blue-dim); }
+    .gradient-roast {
+      background: linear-gradient(135deg, var(--orange) 0%, #FF3D00 50%, var(--orange) 100%);
+      background-size: 200% 200%;
+      animation: shimmer 3s ease infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 30px rgba(255, 107, 43, 0.4); }
+      50% { box-shadow: 0 0 60px rgba(255, 107, 43, 0.8); }
+    }
+    .roast-btn { animation: pulse-glow 2.5s ease-in-out infinite; }
+    .roast-btn:hover { transform: translateY(-2px) scale(1.02); }
+    .roast-btn:active { transform: translateY(0) scale(0.98); }
+    .meter-fill {
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .verdict-fire { background: linear-gradient(135deg, #FF6B2B 0%, #FF3D00 100%); }
+    .verdict-ice { background: linear-gradient(135deg, #00D4FF 0%, #0099FF 100%); }
+    .verdict-chaos { background: linear-gradient(135deg, #C026D3 0%, #7C3AED 100%); }
+    .verdict-classic { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+    textarea { font-family: 'Inter', sans-serif; }
+    textarea::placeholder { color: var(--text-dim); }
+    .lineup-input:focus { outline: none; }
+    .screen-transition {
+      animation: fadeIn 0.4s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <!-- HEADER                                                          -->
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <header class="border-b border-white/5 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🔥</span>
+        <span class="headline-font font-bold text-xl tracking-tight">BeatM <span class="accent-orange">ROAST</span> MODE</span>
+      </div>
+      <div class="text-xs text-dim">Cursor Boston × Hult Sports Hack · 2026</div>
+    </div>
+  </header>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <!-- SCREEN 1 — LANDING                                              -->
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <main id="screen-landing" class="screen-transition px-6 py-12">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-12">
+        <h1 class="headline-font font-bold text-5xl md:text-7xl tracking-tight mb-4">
+          Your lineup.<br />
+          <span class="accent-orange">Their lineup.</span><br />
+          One AI roast.
+        </h1>
+        <p class="text-dim text-lg max-w-xl mx-auto">
+          Drop two DFS lineups. Claude generates a battle card so brutal it has to be shared.
+        </p>
+      </div>
+
+      <!-- Lineup inputs -->
+      <div class="grid md:grid-cols-[1fr_auto_1fr] gap-6 items-stretch mb-8">
+
+        <!-- Side A -->
+        <div class="bg-card rounded-2xl border-2 border-orange p-6 shadow-orange">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full" style="background: var(--orange);"></span>
+              <span class="headline-font font-bold text-lg accent-orange">SIDE A</span>
+            </div>
+            <span class="text-xs text-dim">5 / 10</span>
+          </div>
+          <textarea
+            id="lineup-a"
+            class="lineup-input w-full bg-elevated rounded-xl p-4 text-sm leading-relaxed resize-none border border-white/5 focus:border-orange transition"
+            rows="6"
+            placeholder="LeBron James&#10;Stephen Curry&#10;..."
+          >LeBron James
+Stephen Curry
+Draymond Green
+Andrew Wiggins
+Anthony Davis</textarea>
+        </div>
+
+        <!-- VS divider -->
+        <div class="flex items-center justify-center">
+          <div class="headline-font font-bold text-3xl text-dim">VS</div>
+        </div>
+
+        <!-- Side B -->
+        <div class="bg-card rounded-2xl border-2 border-blue p-6 shadow-blue">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full" style="background: var(--blue);"></span>
+              <span class="headline-font font-bold text-lg accent-blue">SIDE B</span>
+            </div>
+            <span class="text-xs text-dim">5 / 10</span>
+          </div>
+          <textarea
+            id="lineup-b"
+            class="lineup-input w-full bg-elevated rounded-xl p-4 text-sm leading-relaxed resize-none border border-white/5 focus:border-blue transition"
+            rows="6"
+            placeholder="Jayson Tatum&#10;Jaylen Brown&#10;..."
+          >Jayson Tatum
+Jaylen Brown
+Jrue Holiday
+Kristaps Porzingis
+Derrick White</textarea>
+        </div>
+      </div>
+
+      <!-- ROAST button -->
+      <div class="flex justify-center mb-10">
+        <button
+          onclick="showRoast()"
+          class="roast-btn gradient-roast headline-font font-bold text-2xl tracking-wider px-16 py-5 rounded-2xl text-white transition transform hover:shadow-2xl"
+        >
+          🔥 &nbsp; R O A S T &nbsp; 🔥
+        </button>
+      </div>
+
+      <!-- Quick battles -->
+      <div class="text-center">
+        <div class="text-xs uppercase tracking-widest text-dim mb-3">Quick Battles ›</div>
+        <div class="flex flex-wrap justify-center gap-3">
+          <button onclick="loadBattle('coast')" class="bg-elevated hover:bg-card border border-white/10 hover:border-orange/50 rounded-full px-5 py-2 text-sm transition">
+            Coast War
+          </button>
+          <button onclick="loadBattle('greek')" class="bg-elevated hover:bg-card border border-white/10 hover:border-orange/50 rounded-full px-5 py-2 text-sm transition">
+            Greek Freak vs The Slovenian
+          </button>
+          <button onclick="loadBattle('era')" class="bg-elevated hover:bg-card border border-white/10 hover:border-orange/50 rounded-full px-5 py-2 text-sm transition">
+            Old Guard vs New Wave
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 text-xs text-dim">
+        Anonymous · No login · No data stored · Cards live in the URL
+      </div>
+    </div>
+  </main>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <!-- SCREEN 2 — ROAST CARD                                           -->
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <main id="screen-card" class="screen-transition px-6 py-12 hidden">
+    <div class="max-w-5xl mx-auto">
+
+      <button onclick="showLanding()" class="text-dim hover:text-white text-sm mb-6 transition">
+        ← Back
+      </button>
+
+      <!-- The card itself -->
+      <div class="bg-card rounded-3xl border border-white/10 p-8 md:p-10 relative overflow-hidden">
+
+        <!-- Top row: verdict + crowd pulse -->
+        <div class="flex items-start justify-between mb-6">
+          <div id="verdict-tag" class="verdict-fire headline-font font-bold text-sm tracking-wider px-4 py-2 rounded-full">
+            🔥 FIRE
+          </div>
+          <div class="text-right">
+            <div class="text-xs uppercase tracking-widest text-dim mb-1">Crowd Pulse</div>
+            <div class="flex items-center gap-3">
+              <div class="w-32 h-2 bg-elevated rounded-full overflow-hidden">
+                <div id="pulse-meter" class="meter-fill h-full gradient-roast" style="width: 0%;"></div>
+              </div>
+              <div id="pulse-value" class="headline-font font-bold text-2xl">87</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h2 id="card-headline" class="headline-font font-bold text-3xl md:text-5xl tracking-tight mb-8 leading-tight">
+          COAST WAR: BAY BREAKS BEANTOWN
+        </h2>
+
+        <!-- Two-column roast -->
+        <div class="grid md:grid-cols-2 gap-5 mb-8">
+
+          <div class="bg-elevated rounded-2xl border-l-4 border-orange p-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-2 h-2 rounded-full" style="background: var(--orange);"></span>
+              <span class="headline-font font-bold text-sm accent-orange tracking-widest">SIDE A</span>
+            </div>
+            <div id="card-lineup-a" class="text-xs text-dim mb-4 leading-relaxed">
+              LeBron · Curry · Draymond · Wiggins · AD
+            </div>
+            <p id="card-roast-a" class="text-base leading-relaxed">
+              "Locking in three 35-year-olds and praying West Coast jet lag works in your favor? Curry's still cooking, but Draymond's stat line has been a flat circle for three weeks. This lineup peaked in 2022."
+            </p>
+          </div>
+
+          <div class="bg-elevated rounded-2xl border-l-4 border-blue p-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-2 h-2 rounded-full" style="background: var(--blue);"></span>
+              <span class="headline-font font-bold text-sm accent-blue tracking-widest">SIDE B</span>
+            </div>
+            <div id="card-lineup-b" class="text-xs text-dim mb-4 leading-relaxed">
+              Tatum · Brown · Holiday · Porzingis · White
+            </div>
+            <p id="card-roast-b" class="text-base leading-relaxed">
+              "Five Celtics like that's a strategy and not just a fan moment. Porzingis is one minute restriction away from a DNP — and you stacked him next to White, who scores when no one's watching. Bold."
+            </p>
+          </div>
+        </div>
+
+        <!-- Prediction -->
+        <div class="bg-elevated rounded-2xl p-5 mb-6 border border-white/5">
+          <div class="text-xs uppercase tracking-widest text-dim mb-2">The Call ›</div>
+          <p id="card-prediction" class="text-lg leading-snug">
+            Boston's defense smothers Bay's over-30 club. <span class="accent-blue font-semibold">Side B by 9.</span>
+          </p>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button onclick="copyShare()" class="flex-1 bg-elevated hover:bg-card border border-white/10 rounded-xl px-6 py-4 text-sm font-semibold transition">
+            <span id="copy-text">📋 &nbsp; Copy share link</span>
+          </button>
+          <button onclick="showLanding()" class="flex-1 gradient-roast headline-font font-bold tracking-wider rounded-xl px-6 py-4 text-white transition hover:shadow-xl">
+            🔥 &nbsp; ROAST AGAIN
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center mt-6 text-xs text-dim">
+        Generated by Claude · Built in 2 hours at the Cursor Boston Sports Hack
+      </div>
+    </div>
+  </main>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <script>
+    // Pre-canned roast outputs (this is what Claude would return in prod)
+    const battles = {
+      coast: {
+        lineupA: ['LeBron James','Stephen Curry','Draymond Green','Andrew Wiggins','Anthony Davis'],
+        lineupB: ['Jayson Tatum','Jaylen Brown','Jrue Holiday','Kristaps Porzingis','Derrick White'],
+        headline: 'COAST WAR: BAY BREAKS BEANTOWN',
+        roastA: '"Locking three 35-year-olds and praying West Coast jet lag works in your favor? Curry\'s still cooking, but Draymond\'s stat line has been a flat circle for three weeks. This lineup peaked in 2022."',
+        roastB: '"Five Celtics like that\'s a strategy and not just a fan moment. Porzingis is one minute restriction away from a DNP — and you stacked him next to White, who scores when no one\'s watching. Bold."',
+        prediction: 'Boston\'s defense smothers Bay\'s over-30 club. <span class="accent-blue font-semibold">Side B by 9.</span>',
+        crowdPulse: 87,
+        verdict: 'fire',
+        verdictText: '🔥 FIRE'
+      },
+      greek: {
+        lineupA: ['Giannis Antetokounmpo','Khris Middleton','Brook Lopez','Damian Lillard','Pat Connaughton'],
+        lineupB: ['Luka Doncic','Kyrie Irving','PJ Washington','Dereck Lively II','Derrick Jones Jr.'],
+        headline: 'EURO TRIP: GIANNIS LANDS, LUKA SPINS',
+        roastA: '"You picked Giannis and four guys who exist to watch Giannis. Lillard\'s been playing like he\'s already in retirement and Brook Lopez hasn\'t dribbled the ball in a decade. The Greek Freak is going to need 50 to save this hand."',
+        roastB: '"Luka and Kyrie, then three guys whose names you Googled this morning. Lively could be huge — or he could foul out in 12 minutes. Your lineup is one ankle tweak from a comedy show. But the upside? Devastating."',
+        prediction: 'Luka\'s triple-double drags the Mavs lineup over the line. <span class="accent-blue font-semibold">Side B by 4.</span>',
+        crowdPulse: 76,
+        verdict: 'chaos',
+        verdictText: '💥 CHAOS'
+      },
+      era: {
+        lineupA: ['LeBron James','Kevin Durant','Stephen Curry','James Harden','Chris Paul'],
+        lineupB: ['Victor Wembanyama','Paolo Banchero','Anthony Edwards','Cade Cunningham','Alperen Sengun'],
+        headline: 'BOOMERS V. ZOOMERS: THE NURSING HOME PLAYS THE NURSERY',
+        roastA: '"You assembled the 2014 All-Star team in 2026. Combined age: 180. Combined load management days this month: 47. This is what happens when you draft players using a yearbook from your childhood."',
+        roastB: '"Five guys who\'ve never won a playoff series and a unicorn who might score 50 or twist his ankle in warmups. Wemby is the only player on this team who can guarantee he\'ll play 30 minutes — and that\'s mostly because the alternative is a Sengun double-double, which is fine actually."',
+        prediction: 'The future wins. Loudly. <span class="accent-blue font-semibold">Side B by 14.</span>',
+        crowdPulse: 93,
+        verdict: 'fire',
+        verdictText: '🔥 FIRE'
+      }
+    };
+
+    const verdictClasses = {
+      fire: 'verdict-fire',
+      ice: 'verdict-ice',
+      chaos: 'verdict-chaos',
+      classic: 'verdict-classic'
+    };
+
+    function loadBattle(key) {
+      const b = battles[key];
+      document.getElementById('lineup-a').value = b.lineupA.join('\n');
+      document.getElementById('lineup-b').value = b.lineupB.join('\n');
+    }
+
+    function getCurrentLineups() {
+      const a = document.getElementById('lineup-a').value.split('\n').filter(s => s.trim());
+      const b = document.getElementById('lineup-b').value.split('\n').filter(s => s.trim());
+      return { a, b };
+    }
+
+    function detectBattle() {
+      // Match current input against a known battle for the mockup
+      const { a, b } = getCurrentLineups();
+      const aStr = a.join('|').toLowerCase();
+      for (const key of Object.keys(battles)) {
+        const ref = battles[key].lineupA.join('|').toLowerCase();
+        if (aStr === ref) return key;
+      }
+      return 'coast'; // default
+    }
+
+    function showRoast() {
+      const key = detectBattle();
+      const b = battles[key];
+
+      document.getElementById('card-headline').textContent = b.headline;
+      document.getElementById('card-lineup-a').textContent = b.lineupA.map(p => p.split(' ').slice(-1)[0]).join(' · ');
+      document.getElementById('card-lineup-b').textContent = b.lineupB.map(p => p.split(' ').slice(-1)[0]).join(' · ');
+      document.getElementById('card-roast-a').textContent = b.roastA;
+      document.getElementById('card-roast-b').textContent = b.roastB;
+      document.getElementById('card-prediction').innerHTML = b.prediction;
+      document.getElementById('pulse-value').textContent = b.crowdPulse;
+
+      const verdictEl = document.getElementById('verdict-tag');
+      verdictEl.className = `${verdictClasses[b.verdict]} headline-font font-bold text-sm tracking-wider px-4 py-2 rounded-full`;
+      verdictEl.textContent = b.verdictText;
+
+      document.getElementById('screen-landing').classList.add('hidden');
+      document.getElementById('screen-card').classList.remove('hidden');
+      document.getElementById('screen-card').classList.remove('screen-transition');
+      void document.getElementById('screen-card').offsetWidth;
+      document.getElementById('screen-card').classList.add('screen-transition');
+
+      // animate the pulse meter
+      const meter = document.getElementById('pulse-meter');
+      meter.style.width = '0%';
+      setTimeout(() => { meter.style.width = b.crowdPulse + '%'; }, 100);
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showLanding() {
+      document.getElementById('screen-card').classList.add('hidden');
+      document.getElementById('screen-landing').classList.remove('hidden');
+      document.getElementById('screen-landing').classList.remove('screen-transition');
+      void document.getElementById('screen-landing').offsetWidth;
+      document.getElementById('screen-landing').classList.add('screen-transition');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function copyShare() {
+      const url = window.location.href + '#shared';
+      const fallback = () => {
+        const txt = document.createElement('textarea');
+        txt.value = url;
+        document.body.appendChild(txt);
+        txt.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(txt);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).catch(fallback);
+      } else {
+        fallback();
+      }
+      const el = document.getElementById('copy-text');
+      const original = el.textContent;
+      el.textContent = '✓  Copied!';
+      setTimeout(() => { el.textContent = original; }, 1500);
+    }
+  </script>
+</body>
+</html>
